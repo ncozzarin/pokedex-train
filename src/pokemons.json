@@ -1,0 +1,18 @@
+[{
+    "id": 1,
+    "name": "Charmander",
+    "color": "bg-orange-400",
+    "type":"Fire",
+    "weight":8,
+    "height":0.6,
+    "moves":["piña","patada"],
+    "description":"Le gusta pegar patadas",
+    "hp":100,
+    "atk":30,
+    "def":40,
+    "satk":70,
+    "sdef":34,
+    "spd":34,
+    "img":"charmander.png"
+  }
+]
