@@ -17,7 +17,7 @@
   },
   {
     "id": 1,
-    "name": "Charmander",
+    "name": "Pitotoy",
     "color": "bg-orange-400",
     "type":"Fire",
     "weight":8,
@@ -33,7 +33,7 @@
     "img":"charmander.png"
   },{
     "id": 1,
-    "name": "Charmander",
+    "name": "Squirtle",
     "color": "bg-orange-400",
     "type":"Fire",
     "weight":8,
