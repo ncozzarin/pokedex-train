@@ -5,6 +5,9 @@ export default function HomeScreen() {
 
   
       return (
-
-      );
+/*         Homescrreen html
+            title
+            search component
+            display thumbnails components
+ */      );
   }
