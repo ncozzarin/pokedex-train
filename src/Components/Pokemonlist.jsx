@@ -2,10 +2,10 @@ import React from 'react';
 import Preview from './Preview';
  
  
-const Pokemonlist = ({Pokemonlist}) => {
+const Pokemonlist = ({pokemonList}) => {
    return (
        <div>
-           {Pokemonlist.map(pokemon => {
+           {pokemonList.map(pokemon => {
                return (
                    <Preview pokemon={pokemon} />
                )
@@ -14,4 +14,4 @@ const Pokemonlist = ({Pokemonlist}) => {
    );
 };
  
-export default ToDoList;
+export default Pokemonlist;
