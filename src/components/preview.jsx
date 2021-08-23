@@ -6,7 +6,7 @@ const Preview = ({pokemon}) => {
         <div>
             <span>{pokemon.name}</span>
         </div>
-            <img src={`/img/${pokemon.img}.png`} alt={pokemon.name}/>
+            <img src="src/Images/charmander.png" alt={pokemon.name}/>
        </div>
    );
 };
