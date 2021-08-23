@@ -7,6 +7,7 @@ export default function HomeScreen() {
     console.log(data);
   
       return (
+          
          <Pokemonlist pokemonList={pokemonList} ></Pokemonlist>
     );
   }

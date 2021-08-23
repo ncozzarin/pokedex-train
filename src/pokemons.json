@@ -1,7 +1,7 @@
 [{
     "id": "#004",
     "name": "Charmander",
-    "color": "bg-orange-400",
+    "color": "yellow-500",
     "type":"Fire",
     "weight":8.5,
     "height":0.6,
@@ -18,7 +18,7 @@
   {
     "id": "#001",
     "name": "Bulbasaur",
-    "color": "bg-green-400",
+    "color": "green-400",
     "type":["Grass","Poison"],
     "weight":6.9,
     "height":0.7,
@@ -34,7 +34,7 @@
   },{
     "id": "#007",
     "name": "Squirtle",
-    "color": "bg-blue-400",
+    "color": "blue-400",
     "type":"Water",
     "weight":9,
     "height":0.5,
@@ -50,7 +50,7 @@
   },{
     "id": "#025",
     "name": "Pikachu",
-    "color": "bg-yellow-400",
+    "color": "yellow-300",
     "type":"Electric",
     "weight":6,
     "height":0.4,
@@ -66,7 +66,7 @@
   },{
     "id": "#132",
     "name": "Ditto",
-    "color": "bg-brown-400",
+    "color": "brown-400",
     "type":"Normal",
     "weight":4,
     "height":0.3,
@@ -82,7 +82,7 @@
   },{
     "id": "#304",
     "name": "Aron",
-    "color": "bg-purple-100",
+    "color": "purple-100",
     "type":["Steel","Rock"],
     "weight":60,
     "height":0.4,
@@ -98,7 +98,7 @@
   },{
     "id": "#132",
     "name": "Mew",
-    "color": "bg-pink-500",
+    "color": "pink-500",
     "type":"Psychic",
     "weight":4,
     "height":0.4,
@@ -114,7 +114,7 @@
   },{
     "id": "#092",
     "name": "Gastly",
-    "color": "bg-purple-700",
+    "color": "purple-700",
     "type":["Ghost","Type"],
     "weight":0.1,
     "height":1.3,
@@ -131,7 +131,7 @@
   {
     "id": "#012",
     "name": "Butterfree",
-    "color": "bg-green-200",
+    "color": "green-200",
     "type":["Bug","Flying"],
     "weight":32,
     "height":1.2,
