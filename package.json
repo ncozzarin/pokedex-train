@@ -2,6 +2,7 @@
   "name": "pokedex-train",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://pokeapi.co/api/v2/",
   "dependencies": {
     "@craco/craco": "^5.9.0",
     "@testing-library/jest-dom": "^5.11.4",
