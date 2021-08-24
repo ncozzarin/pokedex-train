@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import Pokemonlist from '../Components/Pokemonlist';
 import data from "../pokemons.json";
-
+const fetchURL = "https://pokeapi.co/api/v2/";
 export default function HomeScreen() {
     const [hasError, setErrors] = useState(false);
     const [pokemons, setPokemons] = useState();
     
-    useEffect(() =>
-    fetch("https://swapi.co/api/planets/4/")
-      .then(res => res.json())
-      .then(res => this.setState({ planets: res }))
-      .catch(() => this.setState({ hasErrors: true }))
-  );
+    const getPokemons = () =>
+    fetch(`${fetchURL}/pokemon?limit=10&offset=200`)
+      .then((res) => res.json())
+    
+    useEffect(() => {
+        getPokemons().then((pokemons) => setPokemons(pokemons))
+      }, [])
     
     
-    console.log(data);
+    console.log(pokemons);
   
       return (
 
-         <Pokemonlist pokemonList={pokemonList} ></Pokemonlist>
+         <Pokemonlist pokemonList={pokemons} ></Pokemonlist>
     );
   }

@@ -2,10 +2,10 @@ import React from 'react';
 import Preview from './Preview';
  
  
-const Pokemonlist = ({pokemonList}) => {
+const Pokemonlist = ({pokemons}) => {
    return (
-       <div class="grid grid-cols-3 m-3">
-           {pokemonList.map(pokemon => {
+       <div className="grid grid-cols-3 m-3">
+           {pokemons && pokemons.map(pokemon => {
                return (
                    <Preview pokemon={pokemon} />
                )
