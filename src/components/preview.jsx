@@ -7,7 +7,7 @@ const Preview = ({pokemon}) => {
             <div class="flex justify-end p-1">
                 <span>{pokemon.id}</span>
             </div>
-                <img src={`./src/Images/${pokemon.img}`} alt={pokemon.name}/>
+                <img src={require(`../Images/${pokemon.img}`)} alt={pokemon.name}/>
             <div class={`bg-${pokemon.color} w-32 rounded-xl flex justify-center -mx-1 my-9 p-1`}>
                 <span>{pokemon.name}</span>
             </div>
