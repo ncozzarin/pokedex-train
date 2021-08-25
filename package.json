@@ -8,12 +8,9 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^1.1.5",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -41,14 +38,23 @@
       "last 1 safari version"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format"
+    }
+  },
   "devDependencies": {
     "@types/react": "^17.0.19",
     "autoprefixer": "^10.3.1",
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-react": "^7.24.0",
+    "husky": "^7.0.2",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
+    "prettier": "^2.3.2",
     "tailwindcss": "^2.2.7"
   }
 }
