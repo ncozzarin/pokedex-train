@@ -1,19 +1,16 @@
-import { data } from 'autoprefixer';
 import React, { useState, useEffect } from 'react';
 import Pokemonlist from '../Components/Pokemonlist';
+import {getPokemons} from '../utils/fetchService'
 
 export default function HomeScreen() {
     const [pokemons, setPokemons] = useState();
 
-    useEffect(() => {
-        getPokemons();
-      }, []);
+    const getData = async () => await getPokemons(10,20);
     
-    const getPokemons = async () => {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=200");
-        const data = await response.json();
-        setPokemons(data);
-    }
+    useEffect(() => {
+      setPokemons(getData());
+      }, []);
+
     
     console.log(pokemons);
   
