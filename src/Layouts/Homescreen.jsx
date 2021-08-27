@@ -10,9 +10,6 @@ export default function HomeScreen() {
     useEffect(() => {
       setPokemons(getData());
       }, []);
-
-    
-    console.log(pokemons);
   
       return (
 
