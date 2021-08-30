@@ -5,3 +5,10 @@ const getPokemons = async (limitNumber, offsetNumber) => {
     return data;
 }
 export {getPokemons}
+
+const getPokemonsData = async (pokemonUrl) => {
+    const response = await fetch(`${pokemonUrl}`);
+    const data = await response.json();
+    return data;
+}
+export {getPokemonsData}
