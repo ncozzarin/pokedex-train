@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Pokemonlist from '../Components/Pokemonlist';
-import {getPokemons} from '../utils/fetchService'
+import {getPokemons} from '../utils/fetchService';
 
 export default function HomeScreen() {
     const [pokemons, setPokemons] = useState();
