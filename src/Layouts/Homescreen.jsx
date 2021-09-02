@@ -7,6 +7,8 @@ export default function HomeScreen() {
 
     const getData = async () => await getPokemons(10,20);
     
+
+    /* Use efect will check everytime a diff in the context */
     useEffect(() => {
       setPokemons(getData());
       }, []);
