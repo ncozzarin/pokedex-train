@@ -2,7 +2,8 @@ import React from 'react';
 import Preview from './Preview';
 import {getPokemonsData} from '../utils/fetchService';
  
-const Pokemonlist = ({pokemons}) => {
+
+const Pokemonlist = ({dataJseon}) => {
 
     const [pokemons, setPokemons] = useState();
 
