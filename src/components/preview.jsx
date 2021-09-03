@@ -2,7 +2,6 @@ import React from 'react';
 import "../styles/output.css";
 
 
-unused components should be deleted
 const Preview = ({pokemon}) => {
    return (
        <div className={`box-border h-32 w-32 m-2 border-4 rounded-xl border-${pokemon.color} block`}>

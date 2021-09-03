@@ -3,7 +3,7 @@ import Preview from './Preview';
 import {getPokemonsData} from '../utils/fetchService';
  
 
-const Pokemonlist = ({dataJseon}) => {
+const Pokemonlist = ({pokemons}) => {
 
     const [pokemons, setPokemons] = useState();
 
@@ -17,9 +17,10 @@ const Pokemonlist = ({dataJseon}) => {
 
        <div className="grid grid-cols-3 m-3">
            {pokemons && pokemons.map(pokemon => {
+               let data = getPokemonsData(pokemon.url);
                return (
 
-                   <Preview pokemon={pokemon} />
+                   <Preview pokemon={data} />
                )
            })}
        </div>
