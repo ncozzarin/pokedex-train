@@ -3,10 +3,10 @@ import Pokemonlist from '../Components/Pokemonlist';
 import {getPokemons} from '../utils/fetchService';
 
 export default function HomeScreen() {
-    const [pokemons, setPokemons] = useState();
+    const [pokemonsJSON, setPokemons] = useState();
 
     const getData = async () => await getPokemons(10,20);
-    
+    console.log(pokemonsJSON);
 
     /* Use efect will check everytime a diff in the context */
     useEffect(() => {
@@ -15,6 +15,6 @@ export default function HomeScreen() {
   
       return (
 
-         <Pokemonlist pokemonList={pokemons} ></Pokemonlist>
+         <Pokemonlist pokemonList={pokemonsJSON} ></Pokemonlist>
     );
   }
