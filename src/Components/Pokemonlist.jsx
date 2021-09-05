@@ -3,11 +3,12 @@ import Preview from './Preview';
 import {getPokemonsData} from '../utils/fetchService';
  
 
+// eslint-disable-next-line react/prop-types
 const Pokemonlist = ({pokemonsJSON}) => {
-
     const [pokemons, setPokemons] = useState();
     
     setPokemons(pokemonsJSON);
+    console.log(pokemonsJSON);
    return (
 
        <div className="grid grid-cols-3 m-3">
@@ -15,7 +16,7 @@ const Pokemonlist = ({pokemonsJSON}) => {
                let data = getPokemonsData(pokemon.url);
                return (
 
-                   <Preview pokemon={data} />
+                   <Preview key={pokemonsJSON} pokemon={data}/>
                )
            })}
        </div>
