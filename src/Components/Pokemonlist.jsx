@@ -8,10 +8,10 @@ const Pokemonlist = ({pokemonsJSON}) => {
     const [pokemons, setPokemons] = useState();
     
     setPokemons(pokemonsJSON);
-    console.log(pokemonsJSON);
+    console.log(pokemons);
    return (
-
-       <div className="grid grid-cols-3 m-3">
+    <div>hola</div>
+/*        <div className="grid grid-cols-3 m-3">
            {pokemons && pokemons.map(pokemon => {
                let data = getPokemonsData(pokemon.url);
                return (
@@ -21,6 +21,7 @@ const Pokemonlist = ({pokemonsJSON}) => {
            })}
        </div>
    );
-};
- 
-export default Pokemonlist;
+}; */
+   );
+
+   export default Pokemonlist;
