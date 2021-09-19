@@ -20,12 +20,6 @@
     "eject": "react-scripts eject",
     "watch:css": "postcss src/styles/tailwind.css -o src/styles/output.css"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -46,11 +40,6 @@
   "devDependencies": {
     "@types/react": "^17.0.19",
     "autoprefixer": "^10.3.1",
-    "eslint": "^7.32.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-react": "^7.24.0",
     "husky": "^7.0.2",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
