@@ -12,6 +12,7 @@ export default function HomeScreen() {
             );
             const data = await response.json();
             setPokemons(data.results);
+            
         };
 
         getPokemons(20, 10);
