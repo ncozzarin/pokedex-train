@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Preview from '../components-1/preview';
-import { getPokemonsData } from '../utils/fetchService';
+
 
 const Pokemonlist = ({ pokemonsJSON }) => {
 
