@@ -13,9 +13,9 @@ const getPokemonsData = async (pokemonUrl) => {
 }
 export {getPokemonsData}
 
-const getPokemonsColor = async (pokemonId) => {
+const getPokemonColor = async (pokemonId) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon-color/${pokemonId}`);
     const data = await response.json();
     return data;
 }
-export {getPokemonsColor}
+export {getPokemonColor}
