@@ -4,23 +4,16 @@ import {getPokemonsData, getPokemonColor} from '../utils/fetchService';
 
 
 export default function Pokemonlist ({ pokemonsJSON }) {
-    const [pokemons, setPokemons] = useState();
+    const [pokemons, setPokemons] = useState([]);
 
-    let pokemonDetails;
-    let pokemonColor;
 
     useEffect(() => {
-        let pokemonsDetails = [];
-        const getData = async (pokemonsJSON) => {
-            pokemonsJSON && pokemonsJSON.map(pokemon) => {
-                
-            }
-            pokemonDetails = await getPokemonsData(url);
-            pokemonColor = await getPokemonColor(pokemonDetails.name)
-            setPokemons(response.results);
+        const getData = async (url) => {
+            let response = await getPokemonsData(url);
+            response.results.color = await getPokemonColor(response.results.name);
+            setPokemons([...pokemons, response.results]);
         };
         
-        getData(pokemonsJSON);
     },[]);
 
     return (
@@ -29,11 +22,8 @@ export default function Pokemonlist ({ pokemonsJSON }) {
             {pokemonsJSON &&
               pokemonsJSON.map((pokemon) => {
                 getData(pokemon.url);
-                pokemonColor = getPokemonColor(pokemonDetails.name);
-                console.log(pokemonColor);
-                console.log(pokemonDetails);
                    return (
-                       <h1>{pokemon.url}</h1>
+                       <h1>{pokemons.name}</h1>
               )})}
         </div>
     );
