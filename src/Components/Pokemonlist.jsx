@@ -8,8 +8,10 @@ export default function Pokemonlist ({ pokemonsJSON }) {
 
     const getData = async url => {
         let response = await getPokemonsData(url);
-        response.results.color = await getPokemonColor(response.results.name);
-        setPokemons([...pokemons, response.results]);
+        console.log(response);
+        const color = await getPokemonColor(response.id);
+        response.color = color;
+        setPokemons([...pokemons, response]);
     };
 
     useEffect(() => {
