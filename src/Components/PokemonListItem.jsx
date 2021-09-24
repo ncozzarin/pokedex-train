@@ -3,7 +3,6 @@ import "../styles/output.css";
 
 
 const PokemonListItem = ({pokemon}) => {
-   console.log(pokemon.id);
     return (
        
     <div>

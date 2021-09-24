@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import {getPokemonsData, getPokemonColor} from '../utils/fetchService';
-import PokemonListItem from '../Components/PokemonListItemComponent';
+import PokemonListItem from '../Components/PokemonListItem';
 
 
 export default function Pokemonlist ({ pokemonsJSON }) {
     const [pokemons, setPokemons] = useState([]);
-
+    let pokemonsArray = [];
     const getData = async url => {
         let response = await getPokemonsData(url);
         const color = await getPokemonColor(response.species.url);
         response.color = color;
-        setPokemons([...pokemons, response]);
+        pokemonsArray.push(response);
+        setPokemons(pokemonsArray);
+        console.log(pokemons);
     };
 
     useEffect(() => {
@@ -21,7 +23,10 @@ export default function Pokemonlist ({ pokemonsJSON }) {
     },[pokemonsJSON]);
 
     return (
+        
         pokemons && pokemons.map((pokemon) => {
-            <h1>{pokemon.id}</h1>        
+            <ul>
+                <PokemonListItem pokemon={pokemon}></PokemonListItem>        
+            </ul>
         }));
 }
