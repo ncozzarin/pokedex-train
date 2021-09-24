@@ -14,7 +14,7 @@ const getPokemonsData = async (pokemonUrl) => {
 export {getPokemonsData}
 
 const getPokemonColor = async (pokemonSpeciesUrl) => {
-    const response = await fetch({pokemonSpeciesUrl});
+    const response = await fetch(`${pokemonSpeciesUrl}`);
     const data = await response.json();
     return data.color.name;
 }
