@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {getPokemonsData, getPokemonColor} from '../utils/fetchService';
-
+import PokemonListItem from '../Components/PokemonListItemComponent';
 
 
 export default function Pokemonlist ({ pokemonsJSON }) {
@@ -25,14 +25,13 @@ export default function Pokemonlist ({ pokemonsJSON }) {
     },[pokemonsJSON]);
 
     return (
-        <div className="grid grid-cols-3 m-3">
+        <div>
         <h2>Pokemon Name</h2>
         <div>
         {pokemons && pokemons.map((pokemon) => {
                    return (
-                       <div>
-                        <h1>{pokemon.name}</h1>
-                        <h2>{pokemon.color}</h2>
+                    <div>
+                        <PokemonListItem key={pokemon.id} pokemon={pokemon}></PokemonListItem>
                     </div>
               )})}
         </div>
