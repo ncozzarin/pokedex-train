@@ -13,20 +13,19 @@ const Pokemonlist = ({ pokemonsJSON }) => {
         response.color = color;
         pokemonsArray.push(response);
         setPokemons(pokemonsArray);
+        return response;
     };
 
     useEffect(() => {
         pokemonsJSON && pokemonsJSON.map((pokemon) => {
             getData(pokemon.url);
+            return pokemon.url;
         });
-
+        return pokemonsJSON;
     },[pokemonsJSON]);
 
-    console.log(pokemons);
-    return (
-        
-    <PokemonListItem pokemons={pokemons}></PokemonListItem>        
-    );
+    
+    return <PokemonListItem pokemons={pokemons}></PokemonListItem>;        
 }
 
 export default Pokemonlist;
