@@ -2,14 +2,11 @@ import React from 'react';
 import "../styles/output.css";
 
 
-const PokemonListItem = ({pokemons}) => {
-    console.log(pokemons);
+const PokemonListItem = ({pokemon}) => {
     return (
-        pokemons && pokemons.map((pokemon) => 
             <div key={pokemon.id}>
-                <li>{pokemon.name}</li>
+                <li key={pokemon.id}>{pokemon.name}</li>
             </div>
-        )   
    );
 }
  
