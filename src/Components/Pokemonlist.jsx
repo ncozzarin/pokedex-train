@@ -3,7 +3,7 @@ import {getPokemonsData, getPokemonColor} from '../utils/fetchService';
 import PokemonListItem from '../Components/PokemonListItem';
 
 
-export default function Pokemonlist ({ pokemonsJSON }) {
+const Pokemonlist = ({ pokemonsJSON }) => {
     const [pokemons, setPokemons] = useState([]);
     let pokemonsArray = [];
 
@@ -22,10 +22,11 @@ export default function Pokemonlist ({ pokemonsJSON }) {
 
     },[pokemonsJSON]);
 
+    console.log(pokemons);
     return (
-        pokemons && pokemons.map((pokemon) => {
-            <ul>
-                <PokemonListItem pokemon={pokemon}></PokemonListItem>        
-            </ul>
-        }));
+        
+    <PokemonListItem pokemons={pokemons}></PokemonListItem>        
+    );
 }
+
+export default Pokemonlist;
