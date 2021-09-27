@@ -6,13 +6,13 @@ import PokemonListItem from '../Components/PokemonListItem';
 export default function Pokemonlist ({ pokemonsJSON }) {
     const [pokemons, setPokemons] = useState([]);
     let pokemonsArray = [];
+
     const getData = async url => {
         let response = await getPokemonsData(url);
         const color = await getPokemonColor(response.species.url);
         response.color = color;
         pokemonsArray.push(response);
         setPokemons(pokemonsArray);
-        console.log(pokemons);
     };
 
     useEffect(() => {
@@ -23,7 +23,6 @@ export default function Pokemonlist ({ pokemonsJSON }) {
     },[pokemonsJSON]);
 
     return (
-        
         pokemons && pokemons.map((pokemon) => {
             <ul>
                 <PokemonListItem pokemon={pokemon}></PokemonListItem>        
