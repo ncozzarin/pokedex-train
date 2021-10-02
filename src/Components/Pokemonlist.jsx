@@ -30,7 +30,7 @@ const Pokemonlist = ({ pokemonsJSON }) => {
             console.log(pokemons);
             console.log(pokemon);
             return <PokemonListItem key={pokemon.id} pokemon={pokemon}></PokemonListItem>;
-        }))         
+        }));         
 }
 
 export default Pokemonlist;
