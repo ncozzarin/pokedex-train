@@ -25,12 +25,11 @@ const Pokemonlist = ({ pokemonsJSON }) => {
     },[pokemonsJSON]);
 
     
-    return (
-        pokemons && pokemons.map((pokemon) => { 
-            console.log(pokemons);
+    return(
+            pokemons && pokemons.map((pokemon) => { 
             console.log(pokemon);
             return <PokemonListItem key={pokemon.id} pokemon={pokemon}></PokemonListItem>;
-        }));         
+            }));  
 }
 
 export default Pokemonlist;
