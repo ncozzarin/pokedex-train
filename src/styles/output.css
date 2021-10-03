@@ -6,7 +6,13 @@
 Document
 ========
 */
+.border-brown-400{
+  border-color:rgb(160,82,45);
+}
 
+.bg-brown-400{
+  background-color:rgb(160,82,45);
+}
 /**
 Use a better box model (opinionated).
 */
