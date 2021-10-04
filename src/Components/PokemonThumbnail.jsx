@@ -1,13 +1,12 @@
-import React, { useState } from 'react'; 
+import React from 'react';
 import "../styles/output.css";
 
 
-const PokemonThumbnail = ({imgUrl}) => {
-    const [PokemonThumbnail, setPokemonThumbnail] = useState();
 
+const PokemonThumbnail = ({imgUrl}) => {
     return (
-        
+        <img src={imgUrl}></img>
    );
 }
  
-export default PokemonListItem;
+export default PokemonThumbnail;
