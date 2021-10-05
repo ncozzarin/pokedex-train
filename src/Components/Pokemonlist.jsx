@@ -25,9 +25,10 @@ const Pokemonlist = ({ pokemonsJSON }) => {
         return pokemonsJSON;
     }, [pokemonsJSON]);
 
-
+    console.log(pokemons);
     return (
-        <div className="grid grid-cols-3 m-3">
+        
+        <div className="grid grid-cols-3 ">
             {
                 pokemons && pokemons.map((pokemon) =>
                     <PokemonListItem key={pokemon.id} pokemon={pokemon}></PokemonListItem>
