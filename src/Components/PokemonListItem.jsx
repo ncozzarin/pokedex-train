@@ -5,12 +5,14 @@ import PokemonThumbnail from '../Components/PokemonThumbnail';
 
 const PokemonListItem = ({pokemon}) => {
     return (
-            <div className={`w-24 h-28 bg-white box-border border-4 my-5 rounded-xl border-${pokemon.color}-400 block`}>
+            <div className={`w-24 h-28 bg-white box-border border-4 rounded-xl border-${pokemon.color}-400 `}>
                 <div className="flex justify-end p-1">
                     <h3>{pokemon.id}</h3>
                 </div>
+                <div>
                     <PokemonThumbnail key={pokemon.id} imgUrl={pokemon.sprites.front_default}></PokemonThumbnail>
-                <div className={`bg-${pokemon.color}-400 w-24 rounded-l flex justify-center`}>
+                </div>
+                <div className={`bg-${pokemon.color}-400 w-24 rounded-l`}>
                     <h3>{pokemon.name}</h3>
                 </div>
             </div>
