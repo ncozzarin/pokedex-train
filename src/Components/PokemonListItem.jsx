@@ -10,10 +10,10 @@ const PokemonListItem = ({pokemon}) => {
                     <div className={`flex justify-end mx-1 text-${pokemon.color}-400  text-xs`}>
                         <h3>{`#0${pokemon.id}`}</h3>
                     </div>
-                    <div className="flex justify-center align-center -my-4">
+                    <div className="flex justify-center align-center -my-3">
                         <PokemonThumbnail key={pokemon.id} imgUrl={pokemon.sprites.front_default}></PokemonThumbnail>
                     </div>
-                    <div className={`w-23 bg-${pokemon.color}-400 rounded-l flex justify-center text-white my-2 `}>
+                    <div className={`w-23 bg-${pokemon.color}-400 rounded-l flex justify-center text-white `}>
                         <h3>{pokemon.name}</h3>
                     </div>
                 </div>
