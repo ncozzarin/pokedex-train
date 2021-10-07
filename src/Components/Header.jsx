@@ -3,12 +3,12 @@ import "../styles/output.css";
 
 
 
-const Search = ({imgUrl}) => {
+const Header = ({imgUrl}) => {
     return (
         <div className="bg-black">
-            <input></input>
+            <h1>Con los coquemone</h1>
         </div>
    );
 }
  
-export default Search;
+export default Header;

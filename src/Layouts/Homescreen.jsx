@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Pokemonlist from '../Components/Pokemonlist';
 import {getPokemons} from '../utils/fetchService';
+import Header from '../Components/Header';
+import Search from '../Components/Search';
 
 export default function HomeScreen() {
     const [pokemonsJSON, setPokemons] = useState();
@@ -15,5 +17,11 @@ export default function HomeScreen() {
         getData();
     }, []);
 
-    return pokemonsJSON ? <Pokemonlist pokemonsJSON={pokemonsJSON}></Pokemonlist> : <h1>Error</h1>;
+    return (
+        <div>
+            <Header></Header>
+            <Search></Search>
+            {pokemonsJSON ? <Pokemonlist pokemonsJSON={pokemonsJSON}></Pokemonlist> : <h1>Error</h1>}
+        </div>
+    )    
 }
