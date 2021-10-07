@@ -16,7 +16,7 @@ const PokemonListItem = ({pokemon}) => {
                     <div className={`w-auto bg-${pokemon.color}-400 -my-5 flex justify-center text-white `}>
                         <h3>{pokemon.name}</h3>
                     </div>
-                    <div className={`w-full bg-${pokemon.color}-400 h-2 my-4 bg-red-400 rounded-xl`}></div>
+                    <div className={`w-full bg-${pokemon.color}-400 h-3 my-4 sm:h-2 sm:my-4 bg-red-400 rounded-xl`}></div>
 
                 </div>
             </div>
