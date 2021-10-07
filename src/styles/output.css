@@ -29839,28 +29839,28 @@ video {
 }
 
 .bg-brown-400 {
-  background-color: rgba(181, 126, 63, 0.71);
+  background-color: rgba(181, 126, 63, 1);
 }
 
 .border-brown-400 {
-  border-color: rgba(181, 126, 63,0.71);
+  border-color: rgba(181, 126, 63,1);
 }
 
 .bg-white-400 {
-  background-color: rgba(191, 63, 108, 0.71);
+  background-color: rgba(191, 63, 108, 1);
 }
 
 .border-white-400 {
-  border-color: rgba(191, 63, 108, 0.71);
+  border-color: rgba(191, 63, 108, 1);
 }
 
 .text-brown-400 {
   --tw-border-opacity: 1;
-  color: rgba(181, 126, 63, 0.71);
+  color: rgba(181, 126, 63, 1);
 }
 
 .text-white-400 {
-  color: rgba(191, 63, 108, 0.71);
+  color: rgba(191, 63, 108, 1);
 }
 
 @media (min-width: 640px) {
