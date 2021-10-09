@@ -562,10 +562,6 @@ video {
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
 }
 
-h1 {
-  font-family: 'Poppins', sans-serif;
-}
-
 .container {
   width: 100%;
 }
@@ -176060,4 +176056,5 @@ h1 {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
 
