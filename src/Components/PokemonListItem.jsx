@@ -1,7 +1,8 @@
 import React from 'react'; 
 import "../styles/output.css";
 import PokemonThumbnail from '../Components/PokemonThumbnail';
-
+import Detailscreen from '../Layouts/Detailscreen';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const PokemonListItem = ({pokemon}) => {
     return (
