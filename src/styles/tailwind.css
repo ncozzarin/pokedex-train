@@ -22,7 +22,11 @@
     .text-white-400 {
         color: rgba(191, 63, 108, 1);
     }
- 
+    .thumbnail-base-shape{
+        border: bottom left radius 90%;
+        border: bottom right radius 90%;
+        
+    }
   }
 
 
