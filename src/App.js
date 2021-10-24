@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Route path="/" component={HomeScreen}/>
-      <Route path={`/${pokemon.name}`} component={Detailscreen}/>
+      <Route path="123" component={Detailscreen}/>
     </Router>
     );
 }
