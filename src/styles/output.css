@@ -29868,8 +29868,8 @@ video {
 }
 
 .thumbnail-base-shape{
-  border: bottom left radius 90%;
-  border: bottom right radius 90%;
+  border-bottom-left-radius:20%;
+  border-bottom-right-radius:20%;
 }
 
 @media (min-width: 640px) {
