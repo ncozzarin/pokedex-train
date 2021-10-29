@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Pokemonlist from '../Components/Pokemonlist';
 import {getPokemons} from '../utils/fetchService';
 import Header from '../Components/Header';
-import Search from '../Components/Search';
+import Search from '../Components/search';
 
 export default function HomeScreen() {
     const [pokemonsJSON, setPokemons] = useState();
