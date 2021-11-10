@@ -21,7 +21,7 @@ function App(props) {
   return (
     <Router>
       <Route path="/" component={HomeScreen}/>
-      <Route path="123" component={Detailscreen}/>
+      <Route path="#" component={Detailscreen}/>
     </Router>
     );
 }
