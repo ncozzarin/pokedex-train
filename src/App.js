@@ -21,7 +21,7 @@ function App(props) {
   return (
     <Router>
       <Route path="/" component={HomeScreen}/>
-      <Route path="#" component={Detailscreen}/>
+      <Route exact path="/posts/:pokemonID" component={SinglePokemonPage}/>
     </Router>
     );
 }
