@@ -11,7 +11,7 @@ export const SinglePokemonPage = ({ match }) => {
   if (!pokemon) {
     return (
       <section>
-        <h2>Post not found!</h2>
+        <h2>pokemon not found!</h2>
       </section>
     )
   }

@@ -6,6 +6,7 @@ import HomeScreen from '../src/Layouts/Homescreen';
 import Detailscreen from '../src/Layouts/Detailscreen';
 import { fetchPokemons } from './redux/actions/pokemons';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { SinglePokemonPage } from './Layouts/SinglePokemonPage';
 
 function App(props) {
   const dispatch = useDispatch();

@@ -1,6 +1,7 @@
 import React from 'react'; 
 import "../styles/output.css";
 import PokemonThumbnail from '../Components/PokemonThumbnail';
+import { Link } from 'react-router-dom'
 
 
 const PokemonListItem = ({pokemon}) => {
@@ -17,6 +18,7 @@ const PokemonListItem = ({pokemon}) => {
                         <h3>{pokemon.name}</h3>
                     </div>
                 </div>
+                <Link to={`/pokemons/${pokemon.id}`}></Link>
             </div>
    );
 }
