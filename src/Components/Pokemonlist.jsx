@@ -4,7 +4,8 @@ import PokemonListItem from '../Components/PokemonListItem';
 //Redux logic to consume pokemons frm store with useSelector
 export const PokemonsList = () => {
     const pokemons = useSelector(state => state.pokemons)
-//
+    console.log(pokemons)
+    //  
     const renderedPokemons = pokemons.map(pokemon => (
         <PokemonListItem key={pokemon.id} pokemon={pokemon}></PokemonListItem>
     ))
@@ -37,7 +38,7 @@ const Pokemonlist = ({ pokemonsJSON }) => {
         
         <div className="grid gap-1 grid-cols-3 mx-3">
             {
-                {renderedPokemons}
+
             }
         </div>
     )

@@ -22,7 +22,7 @@ function App(props) {
   return (
     <Router>
       <Route path="/" component={HomeScreen}/>
-      <Route exact path="/posts/:pokemonID" component={SinglePokemonPage}/>
+      <Route exact path="/posts/:pokemonId" component={SinglePokemonPage}/>
     </Router>
     );
 }
