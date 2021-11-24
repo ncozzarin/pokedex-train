@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useSelector } from 'react';
 import { getPokemonsData, getPokemonColor } from '../utils/fetchService';
 import PokemonListItem from '../Components/PokemonListItem';
+import { selectAllPokemons } from '../features/pokemons/pokemonsSlice'
+
 //Redux logic to consume pokemons frm store with useSelector
 export const PokemonsList = () => {
     const pokemons = useSelector(state => state.pokemons)
