@@ -11,9 +11,10 @@ const pokemonsSlice = createSlice({
   reducers: {}
 })
 
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-  const response = await client.get('/fakeApi/posts')
-  return response.data
+export const fetchPosts = createAsyncThunk('pokemons/getPokemons', async () => async (limitNumber, offsetNumber) => {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limitNumber}&offset=${offsetNumber}`);
+  const data = await response.json();
+  return data;
 })
 
 export const selectAllPokemnons = state => state.pokemons
