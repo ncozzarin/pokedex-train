@@ -20,6 +20,6 @@ export const fetchPosts = createAsyncThunk('pokemons/getPokemons', async () => a
 export const selectAllPokemnons = state => state.pokemons
 
 export const selectPokemonById = (state, pokemonId) =>
-  state.posts.find(pokemon => pokemon.id === pokemonId)
+  state.pokemons.find(pokemon => pokemon.id === pokemonId)
 
 export default pokemonsSlice.reducer
