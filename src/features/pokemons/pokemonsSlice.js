@@ -1,16 +1,33 @@
 import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
 
-const initialState = [
-  {}
-]
+const initialState = {
+  pokemons:[],
+  status: 'idle',
+  error: null
+}
 
 const pokemonsSlice = createSlice({
   name: 'pokemons',
   initialState,
-  reducers: {}
+  reducers: {},
+  extraReducers(builder) {
+    builder
+      .addCase(fetchPokemons.pending, (state, action) => {
+        state.status = 'loading'
+      })
+      .addCase(fetchPokemons.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        // Add any fetched posts to the array
+        state.pokemons = state.pokemons.concat(action.payload)
+      })
+      .addCase(fetchPokemons.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.error.message
+      })
+  }
 })
 
-export const fetchPokemons = createAsyncThunk('pokemons/getPokemons', async () => async (limitNumber, offsetNumber) => {
+export const fetchPokemons = createAsyncThunk('pokemons/fetchPokemons', async () => async (limitNumber, offsetNumber) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limitNumber}&offset=${offsetNumber}`);
   // const data = await response.json();
   console.log(response.data)
@@ -34,4 +51,6 @@ export const selectAllPokemnons = state => state.pokemons
 export const selectPokemonById = (state, pokemonId) =>
   state.pokemons.find(pokemon => pokemon.id === pokemonId)
 
+
+  
 export default pokemonsSlice.reducer
