@@ -4,7 +4,7 @@ import {getPokemons} from '../utils/fetchService';
 import Header from '../Components/Header';
 import Search from '../Components/search';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAllPokemnons } from '../features/pokemons/pokemonsSlice';
+import { fetchPokemons, selectAllPokemnons } from '../features/pokemons/pokemonsSlice';
 
 export default function HomeScreen() {
     const [pokemonsJSON, setPokemons] = useState();
@@ -13,13 +13,10 @@ export default function HomeScreen() {
     const pokemonsStatus = useSelector(state => state.pokemons.status);
     /* Use efect will check everytime a diff in the context */
     useEffect(() => {
-        const getData = async () => {
-            const response = await getPokemons(20,10);
-            setPokemons(response.results);
-        };
-
-        getData();
-    }, []);
+        if (pokemonsStatus === 'idle'){
+            dispatch(fetchPokemons(20,10))
+        }
+    }, [pokemonsStatus, dispatch]);
 
     return (
         <div>
