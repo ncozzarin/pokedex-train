@@ -1,4 +1,5 @@
 import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux'
 
 const initialState = {
   pokemons:[],
@@ -9,7 +10,12 @@ const initialState = {
 const pokemonsSlice = createSlice({
   name: 'pokemons',
   initialState,
-  reducers: {},
+  reducers: {
+    addPokemons: state => {
+        state.pokemons.push(action.payload)
+      }
+    }
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchPokemons.pending, (state, action) => {
@@ -31,6 +37,7 @@ export const fetchPokemons = createAsyncThunk('pokemons/fetchPokemons', async ()
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limitNumber}&offset=${offsetNumber}`);
   // const data = await response.json();
   console.log(response.data)
+  useDispatch(addPokemons());
   return response.data;
 })
 
