@@ -22,6 +22,13 @@ export const fetchPokemonsData = createAsyncThunk('pokemons/getPokemonsData', as
   const data = await response.json();
   return data;
 })
+
+export const fetchPokemonsColor = async (pokemonSpeciesUrl) => {
+  const response = await fetch(`${pokemonSpeciesUrl}`);
+  const data = await response.json();
+  return data.color.name;
+}
+
 export const selectAllPokemnons = state => state.pokemons
 
 export const selectPokemonById = (state, pokemonId) =>
