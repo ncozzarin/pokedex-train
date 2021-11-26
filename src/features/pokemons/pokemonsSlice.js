@@ -1,5 +1,4 @@
 import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit'
-import { client } from '../../api/client'
 
 const initialState = [
   {}
@@ -13,8 +12,9 @@ const pokemonsSlice = createSlice({
 
 export const fetchPokemons = createAsyncThunk('pokemons/getPokemons', async () => async (limitNumber, offsetNumber) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limitNumber}&offset=${offsetNumber}`);
-  const data = await response.json();
-  return data;
+  // const data = await response.json();
+  console.log(response.data)
+  return response.data;
 })
 
 export const fetchPokemonsData = createAsyncThunk('pokemons/getPokemonsData', async (pokemonUrl) => {

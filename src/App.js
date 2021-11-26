@@ -4,9 +4,11 @@ import "./styles/output.css";
 import "./Components/Pokemonlist";
 import HomeScreen from '../src/Layouts/Homescreen';
 import Detailscreen from '../src/Layouts/Detailscreen';
-import { fetchPokemons } from './redux/actions/pokemons';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { SinglePokemonPage } from './Layouts/SinglePokemonPage';
+import { fetchPokemons } from './features/pokemons/pokemonsSlice';
+
+
 
 function App(props) {
   const dispatch = useDispatch();
@@ -14,7 +16,7 @@ function App(props) {
   
   useEffect(() => {
     if (pokemons.length === 0){
-      dispatch(fetchPokemons());
+      dispatch(fetchPokemons(20,10));
       setPokemons([{},{}]);
     }
   })
