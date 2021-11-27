@@ -23,7 +23,7 @@ const pokemonsSlice = createSlice({
       })
       .addCase(fetchPokemons.fulfilled, (state, action) => {
         state.status = 'succeeded'
-        // Add any fetched posts to the array
+        // Add any fetched pokemons to the array
         state.pokemons = state.pokemons.concat(action.payload)
       })
       .addCase(fetchPokemons.rejected, (state, action) => {
@@ -61,3 +61,6 @@ export const selectPokemonById = (state, pokemonId) =>
 
   
 export default pokemonsSlice.reducer
+
+// codigo de mati
+
