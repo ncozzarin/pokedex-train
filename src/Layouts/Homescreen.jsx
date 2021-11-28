@@ -8,6 +8,11 @@ import { fetchPokemons, selectAllPokemnons } from '../features/pokemons/pokemons
 export default function HomeScreen() {
     const [pokemonsJSON, setPokemons] = useState();
 
+    useEffect(() => {
+        //Aca esta el dispatch de todos los pokemons para tenerlos disponibles en el montaje de la app
+        setPokemons(selectAllPokemnons());
+        console.log(pokemonsJSON);
+    }, []);
 
     return (
         <div>

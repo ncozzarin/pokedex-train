@@ -34,7 +34,7 @@ export const fetchPokemonsColor = async (pokemonSpeciesUrl) => {
     return data.color.name;
 };
 
-export const selectAllPokemnons = (state) => state.pokemons;
+export const selectAllPokemons = (state) => state.pokemons;
 
 export const selectPokemonById = (state, pokemonId) =>
     state.pokemons.find((pokemon) => pokemon.id === pokemonId);
