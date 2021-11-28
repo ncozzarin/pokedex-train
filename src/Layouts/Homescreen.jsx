@@ -7,11 +7,7 @@ import { fetchPokemons, selectAllPokemnons } from '../features/pokemons/pokemons
 
 export default function HomeScreen() {
     const [pokemonsJSON, setPokemons] = useState();
-    const dispatch = useDispatch();
-    /* Use efect will check everytime a diff in the context */
-    useEffect(() => {
-        dispatch(fetchPokemons(20,10))
-    }, []);
+
 
     return (
         <div>
