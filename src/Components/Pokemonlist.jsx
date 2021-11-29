@@ -1,19 +1,20 @@
-import React, { useState, useEffect, useSelector } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getPokemonsData, getPokemonColor } from '../utils/fetchService';
 import PokemonListItem from '../Components/PokemonListItem';
 import { selectAllPokemons } from '../features/pokemons/pokemonsSlice'
-
+import { useSelector } from 'react-redux';
 //Redux logic to consume pokemons frm store with useSelector
-export const PokemonsList = () => {
-    const pokemons = useSelector(state => state.pokemons)
+export const Pokemonlist = () => {
+    const pokemons = useSelector(state => state.pokemons);
     console.log(pokemons)
     //  
-    const renderedPokemons = pokemons.map(pokemon => (
+    const renderedPokemons = pokemons.pokemons && pokemons.pokemons.map(pokemon => (
         <PokemonListItem key={pokemon.id} pokemon={pokemon}></PokemonListItem>
     ))
+    return(<h1>hola</h1>)
 }
 
-const Pokemonlist = ({ pokemonsJSON }) => {
+/* const Pokemonlist = ({ pokemonsJSON }) => {
     const [pokemons, setPokemons] = useState([]);
     let pokemonsArray = [];
 
@@ -46,6 +47,6 @@ const Pokemonlist = ({ pokemonsJSON }) => {
     )
 
 
-}
+} */
 
 export default Pokemonlist;

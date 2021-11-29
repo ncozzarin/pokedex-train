@@ -9,7 +9,7 @@ const initialState = {
 
 export const fetchPokemons = createAsyncThunk(
     'pokemons/fetchPokemons',
-    async (limitNumber, offsetNumber) => {
+    async (limitNumber) => {
         //Aca hardcodee el offsetNumber
         const response = await fetch(
             `https://pokeapi.co/api/v2/pokemon?limit=${limitNumber}&offset=3`,

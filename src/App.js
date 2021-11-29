@@ -11,7 +11,7 @@ import { fetchPokemons } from './features/pokemons/pokemonsSlice';
 
 function App(props) {
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
       //Aca esta el dispatch de todos los pokemons para tenerlos disponibles en el montaje de la app
       dispatch(fetchPokemons(20));
