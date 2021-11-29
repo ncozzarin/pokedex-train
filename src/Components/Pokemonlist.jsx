@@ -2,12 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { getPokemonsData, getPokemonColor } from '../utils/fetchService';
 import PokemonListItem from '../Components/PokemonListItem';
 import { selectAllPokemons } from '../features/pokemons/pokemonsSlice'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 //Redux logic to consume pokemons frm store with useSelector
 export const Pokemonlist = () => {
     const pokemons = useSelector(state => state.pokemons);
     console.log(pokemons)
-    //  
+    const dispatch = useDispatch();
+    const getData = async (url, i) => {
+        let response = await useDispatch(url);
+        const color = await getPokemonColor(response.species.url);
+        response.color = color;
+        pokemonsArray.push(response);
+        if (i === pokemonsJSON.length - 1)
+            setPokemons(pokemonsArray);
+        return response;
+    };
     const renderedPokemons = pokemons.pokemons && pokemons.pokemons.map(pokemon => (
         <PokemonListItem key={pokemon.id} pokemon={pokemon}></PokemonListItem>
     ))
