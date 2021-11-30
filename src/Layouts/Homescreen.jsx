@@ -10,7 +10,7 @@ export default function HomeScreen() {
         <div>
             <Header></Header>
             <Search></Search>
-            
+            <Pokemonlist></Pokemonlist>
         </div>
     )    
 }

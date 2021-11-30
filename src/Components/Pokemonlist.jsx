@@ -8,10 +8,11 @@ export const Pokemonlist = () => {
     const [pokemons, setPokemons] = useState([]);
     let pokemonsArray = [];
     const pokemonsJSON = useSelector(state => state.pokemons);
+    console.log(pokemonsJSON)
     const dispatch = useDispatch();
-
+    
     const getData = async (url, i) => {
-        let response = await dispatch(url);
+        let response = await getPokemonsData(url);
         const color = await getPokemonColor(response.species.url);
         response.color = color;
         pokemonsArray.push(response);
@@ -21,15 +22,20 @@ export const Pokemonlist = () => {
     };
 
     useEffect(() => {
-        pokemonsJSON && pokemonsJSON.map((pokemon, i) => {
-            getData(pokemon.url, i);
-        });
+        console.log(pokemonsJSON.status)
+        if(pokemonsJSON.status === "succeeded"){
+            console.log(pokemonsJSON.pokemons.results)
+            pokemonsJSON.pokemons.results && pokemonsJSON.pokemons.results.map((pokemon, i) => {
+                getData(pokemon.url, i);
+                console.log(pokemon)
+            });
+        }
     }, [pokemonsJSON]);
 
     const renderedPokemons = pokemons.pokemons && pokemons.pokemons.map(pokemon => (
         <PokemonListItem key={pokemon.id} pokemon={pokemon}></PokemonListItem>
     ))
-    return(<h1>hola</h1>)
+    return(<h1>HOLA</h1>)
 }
 
 export default Pokemonlist;

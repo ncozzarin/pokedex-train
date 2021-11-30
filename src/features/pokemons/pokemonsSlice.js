@@ -55,7 +55,7 @@ const pokemonsSlice = createSlice({
             .addCase(fetchPokemons.fulfilled, (state, action) => {
                 state.status = 'succeeded';
                 // Add any fetched pokemons to the array
-                state.pokemons = state.pokemons.concat(action.payload);
+                state.pokemons = action.payload;
             })
             .addCase(fetchPokemons.rejected, (state, action) => {
                 state.status = 'failed';
