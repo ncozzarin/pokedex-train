@@ -6,10 +6,6 @@ import { useSelector } from 'react-redux';
 import { selectAllPokemons } from '../features/pokemons/pokemonsSlice';
 
 export default function HomeScreen() {
-    const [pokemonsJSON, setPokemons] = useState();
-    setPokemons(useSelector(state => state.pokemons));
-    console.log(pokemonsJSON);
-
     return (
         <div>
             <Header></Header>

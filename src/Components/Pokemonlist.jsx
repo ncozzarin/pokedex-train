@@ -7,8 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export const Pokemonlist = () => {
     const [pokemons, setPokemons] = useState([]);
     let pokemonsArray = [];
-    const pokemons = useSelector(state => state.pokemons);
-    console.log(pokemons)
+    const pokemonsJSON = useSelector(state => state.pokemons);
     const dispatch = useDispatch();
 
     const getData = async (url, i) => {
