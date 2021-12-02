@@ -14,8 +14,11 @@ export const Pokemonlist = () => {
         const color = await getPokemonColor(response.species.url);
         response.color = color;
         pokemonsArray.push(response);
-        if (i === pokemonsJSON.length - 1)
+        if (i === pokemonsJSON.pokemons.results.length - 1){
             setPokemons(pokemonsArray);
+            console.log(pokemons);
+            console.log(pokemonsArray);
+        }
         return response;
     };
 
@@ -23,15 +26,19 @@ export const Pokemonlist = () => {
         if(pokemonsJSON.status === "succeeded"){
             pokemonsJSON.pokemons.results && pokemonsJSON.pokemons.results.map((pokemon, i) => {
                 getData(pokemon.url, i);
-                console.log(pokemon)
             });
         }
     }, [pokemonsJSON]);
 
-    const renderedPokemons = pokemons.pokemons && pokemons.pokemons.map(pokemon => (
+    const renderedPokemons = pokemons && pokemons.map(pokemon => (
         <PokemonListItem key={pokemon.id} pokemon={pokemon}></PokemonListItem>
     ))
-    return({renderedPokemons})
+    
+    return (
+        <div className="grid grid-cols-3 m-3">
+        {renderedPokemons}
+        </div>
+    )
 }
 
 export default Pokemonlist;
