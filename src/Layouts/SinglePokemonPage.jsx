@@ -11,10 +11,9 @@ export const SinglePokemonPage = ({ match }) => {
     let response = await getPokemonsData(url);
     const color = await getPokemonColor(response.species.url);
     response.color = color;
-
     return response;
     }
-
+  
   if (!pokemon) {
     return (
       <section>
@@ -23,11 +22,16 @@ export const SinglePokemonPage = ({ match }) => {
     )
   }
 
-  useEffect(() => {
-    if(pokemon){
-      getData(pokemon);
-        }
-}, [pokemon]);
+useEffect(() => {
+  if(pokemonsJSON.status === "succeeded"){
+      pokemonsJSON.pokemons.results && pokemonsJSON.pokemons.results.map((pokemon, i) => {
+          getData(pokemon.url, i);
+      });
+  }
+}, [pokemons]);
+  
+  let poke = getData(pokemon.url)
+  console.log(poke)
 
   return (
     <section>
