@@ -3,17 +3,9 @@ import { useSelector } from 'react-redux'
 import { selectPokemonById } from '../features/pokemons/pokemonsSlice'
 
 export const SinglePokemonPage = ({ match }) => {
-  const { pokemonId } = match.params
-  const pokemon = useSelector(state => {
-    console.log(state)
-    selectPokemonById(state,pokemonId)})
-
-/*   const pokemon = useSelector(state =>
-    state.pokemons.results.find(pokemon => pokemon.id === pokemonId)
-  )
- */
-
-
+  const { name } = match.params
+  const pokemon = useSelector(state => state.pokemons.pokemons.results && state.pokemons.pokemons.results.find(pokemon => pokemon.name === name));
+  console.log(pokemon)
   if (!pokemon) {
     return (
       <section>
@@ -26,7 +18,7 @@ export const SinglePokemonPage = ({ match }) => {
     <section>
       <article>
         <h2>{pokemon.name}</h2>
-        <p>{pokemon.id}</p>
+        <p></p>
       </article>
     </section>
   )
