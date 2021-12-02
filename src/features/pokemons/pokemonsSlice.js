@@ -37,7 +37,7 @@ export const fetchPokemonsColor = async (pokemonSpeciesUrl) => {
 export const selectAllPokemons = (state) => state.pokemons;
 
 export const selectPokemonById = (state, pokemonId) =>
-    state.pokemons.find((pokemon) => pokemon.id === pokemonId);
+    state && state.pokemons && state.pokemons.find((pokemon) => pokemon.id === pokemonId);
 
 const pokemonsSlice = createSlice({
     name: 'pokemons',

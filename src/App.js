@@ -18,7 +18,7 @@ function App(props) {
   }, []);
   return (
     <Router>
-      <Route path="/" component={HomeScreen}/>
+      <Route exact path="/" component={HomeScreen}/>
       <Route exact path="/pokemons/:pokemonId" component={SinglePokemonPage}/>
     </Router>
     );

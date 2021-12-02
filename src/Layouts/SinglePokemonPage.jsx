@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { selectPokemonById } from '../features/pokemons/pokemonsSlice'
 
 export const SinglePokemonPage = ({ match }) => {
   const { pokemonId } = match.params
+  const pokemon = useSelector(state => {
+    console.log(state)
+    selectPokemonById(state,pokemonId)})
 
-  const pokemon = useSelector(state =>
-    state.pokemons.find(pokemon => pokemon.id === pokemonId)
+/*   const pokemon = useSelector(state =>
+    state.pokemons.results.find(pokemon => pokemon.id === pokemonId)
   )
+ */
+
 
   if (!pokemon) {
     return (
