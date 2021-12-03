@@ -16,8 +16,6 @@ export const Pokemonlist = () => {
         pokemonsArray.push(response);
         if (i === pokemonsJSON.pokemons.results.length - 1){
             setPokemons(pokemonsArray);
-            console.log(pokemons);
-            console.log(pokemonsArray);
         }
         return response;
     };

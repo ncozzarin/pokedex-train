@@ -1,19 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { selectPokemonById } from '../features/pokemons/pokemonsSlice'
 import { getPokemonColor, getPokemonsData } from '../utils/fetchService'
 
 export const SinglePokemonPage = ({ match }) => {
   const { name } = match.params
-  const pokemon = useSelector(state => state.pokemons.pokemons.results && state.pokemons.pokemons.results.find(pokemon => pokemon.name === name));
-
-  const getData = async (url) => {
+  const [pokemon, setPokemon] = useState({});
+  const pokemonRef = useSelector(state => state.pokemons.pokemons.results && state.pokemons.pokemons.results.find(pokemon => pokemon.name === name));
+  
+  const getDataSingle = async (url) => {
+    console.log(url);
     let response = await getPokemonsData(url);
+    console.log(response)
     const color = await getPokemonColor(response.species.url);
     response.color = color;
-    return response;
+    setPokemon(response);
+    console.log(pokemon);
     }
-  
+    
+  useEffect(() => {
+    if(pokemonRef !== undefined){
+    getDataSingle(pokemonRef.url);}
+}, [pokemonRef]);
+
   if (!pokemon) {
     return (
       <section>
@@ -22,23 +30,10 @@ export const SinglePokemonPage = ({ match }) => {
     )
   }
 
-useEffect(() => {
-  if(pokemonsJSON.status === "succeeded"){
-      pokemonsJSON.pokemons.results && pokemonsJSON.pokemons.results.map((pokemon, i) => {
-          getData(pokemon.url, i);
-      });
-  }
-}, [pokemons]);
-  
-  let poke = getData(pokemon.url)
-  console.log(poke)
-
   return (
-    <section>
-      <article>
-        <h2>{pokemon.name}</h2>
-        <p></p>
-      </article>
-    </section>
+    <div>
+      <h1>{pokemon.color}</h1>
+    </div>
   )
+
 }
