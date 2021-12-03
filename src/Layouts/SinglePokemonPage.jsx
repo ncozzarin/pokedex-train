@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import SinglePokemonCard from '../Components/SinglePokemonCard'
 import { getPokemonColor, getPokemonsData } from '../utils/fetchService'
 
 export const SinglePokemonPage = ({ match }) => {
@@ -31,9 +32,7 @@ export const SinglePokemonPage = ({ match }) => {
   }
 
   return (
-    <div>
-      <h1>{pokemon.color}</h1>
-    </div>
+  <SinglePokemonCard pokemon={pokemon}></SinglePokemonCard>
   )
 
 }

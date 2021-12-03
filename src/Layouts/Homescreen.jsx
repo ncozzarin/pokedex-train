@@ -1,5 +1,5 @@
 import React from 'react';
-import Pokemonlist from '../Components/Pokemonlist';
+import Pokemonlist from './Pokemonlist';
 import Header from '../Components/Header';
 import Search from '../Components/search';
 

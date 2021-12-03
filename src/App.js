@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import "./styles/output.css";
-import "./Components/Pokemonlist";
+import "./Layouts/Pokemonlist";
 import HomeScreen from '../src/Layouts/Homescreen';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { SinglePokemonPage } from './Layouts/SinglePokemonPage';
