@@ -9,13 +9,10 @@ export const SinglePokemonPage = ({ match }) => {
   const pokemonRef = useSelector(state => state.pokemons.pokemons.results && state.pokemons.pokemons.results.find(pokemon => pokemon.name === name));
   
   const getDataSingle = async (url) => {
-    console.log(url);
     let response = await getPokemonsData(url);
-    console.log(response)
     const color = await getPokemonColor(response.species.url);
     response.color = color;
     setPokemon(response);
-    console.log(pokemon);
     }
     
   useEffect(() => {
@@ -32,7 +29,7 @@ export const SinglePokemonPage = ({ match }) => {
   }
 
   return (
-  <SinglePokemonCard pokemon={pokemon}></SinglePokemonCard>
+  <SinglePokemonCard pokemon={pokemon} ></SinglePokemonCard>
   )
 
 }
