@@ -12,7 +12,7 @@ export const fetchPokemons = createAsyncThunk(
     async (limitNumber) => {
         //Aca hardcodee el offsetNumber
         const response = await fetch(
-            `https://pokeapi.co/api/v2/pokemon?limit=${limitNumber}&offset=3`,
+            `https://pokeapi.co/api/v2/pokemon?limit=980&offset=0`,
         );
         const data = await response.json();
         return data;

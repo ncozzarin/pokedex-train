@@ -12,6 +12,7 @@ export const SinglePokemonPage = ({ match }) => {
     let response = await getPokemonsData(url);
     const color = await getPokemonColor(response.species.url);
     response.color = color;
+    console.log(response)
     setPokemon(response);
     }
     
@@ -19,6 +20,10 @@ export const SinglePokemonPage = ({ match }) => {
     if(pokemonRef !== undefined){
     getDataSingle(pokemonRef.url);}
 }, [pokemonRef]);
+
+const renderedPokemon = () => (
+  <SinglePokemonCard pokemon={pokemon} ></SinglePokemonCard>
+)
 
   if (!pokemon) {
     return (
@@ -29,7 +34,9 @@ export const SinglePokemonPage = ({ match }) => {
   }
 
   return (
-  <SinglePokemonCard pokemon={pokemon} ></SinglePokemonCard>
+    <div>
+      {renderedPokemon}
+    </div>
   )
 
 }
