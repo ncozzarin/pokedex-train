@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import SinglePokemonCard from '../Components/SinglePokemonCard'
-import { getPokemonColor, getPokemonsData } from '../utils/fetchService'
+import { getPokemonColor, getPokemonDescription, getPokemonsData } from '../utils/fetchService'
 
 export const SinglePokemonPage = ({ match }) => {
   const { name } = match.params
@@ -12,6 +12,8 @@ export const SinglePokemonPage = ({ match }) => {
     let response = await getPokemonsData(url);
     const color = await getPokemonColor(response.species.url);
     response.color = color;
+    const description = await getPokemonDescription(response.id)
+    response.description = description;
     setPokemon(response);
     }
     
