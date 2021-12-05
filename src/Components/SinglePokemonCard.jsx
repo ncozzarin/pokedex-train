@@ -4,7 +4,11 @@ import "../styles/output.css";
 import PokemonThumbnail from './PokemonThumbnail';
 
 const SinglePokemonCard = ({pokemon}) => {
-    console.log(pokemon)
+    if(!pokemon){
+        return(      <section>
+            <h2>pokemon not found!</h2>
+          </section>)
+    }
     return (
     <div className={`justify-center align-center container mx-auto bg-origin-border h-screen border-4 border-opacity-100 box-border border-2 rounded-xl border-${pokemon.color}-400`}>
         <div className={`h-2/6 bg-${pokemon.color}-400`}>
@@ -14,12 +18,10 @@ const SinglePokemonCard = ({pokemon}) => {
                 <h3>{`#0${pokemon.id}`}</h3>
             </div>
             <div className={`flex justify-between`}>
-            <PokemonThumbnail src={pokemon}></PokemonThumbnail>
+            <img src={pokemon.sprites.front_default}></img>
             </div>
         </div>
         <div className={`h-2/3 bg-white rounded-xl -my-2`}>hola</div>
-        
-
     </div>
    );
 }
