@@ -1,18 +1,17 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import "../styles/output.css";
-import PokemonThumbnail from './PokemonThumbnail';
+import PokemonFront from './PokemonFront';
 
 const SinglePokemonCard = ({pokemon}) => {
-    console.log(pokemon);
-    if(!pokemon){
-        return(      <section>
+    if(Object.keys(pokemon).length === 0){
+        return(
+        <section>
             <h2>pokemon not found!</h2>
-          </section>)
+        </section>)
     }
 
     return (
-
     <div className={`justify-center align-center container bg-origin-border h-screen border-4 border-opacity-100 box-border border-2 rounded-xl border-${pokemon.color}-400`}>
         <div className={`h-2/6 bg-${pokemon.color}-400`}>
             <div className="flex justify-between text-white py-4 mx-4">
@@ -21,7 +20,7 @@ const SinglePokemonCard = ({pokemon}) => {
                 <h3>{`#0${pokemon.id}`}</h3>
             </div>
             <div className={`flex justify-between`}>
-            <img src={pokemon}></img>
+            <img src={pokemon.sprites.front_default}></img>
             </div>
         </div>
         <div className={`h-2/3 bg-white rounded-xl block -my-2 `}>

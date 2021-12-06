@@ -21,7 +21,6 @@ const getPokemonColor = async (pokemonSpeciesUrl) => {
 export {getPokemonColor}
 
 const getPokemonDescription = async (id) => {
-    console.log(id)
     const response = await fetch(`https://pokeapi.co/api/v2/characteristic/${id}`);
     const data = await response.json();
     //1 FOR SPANISH

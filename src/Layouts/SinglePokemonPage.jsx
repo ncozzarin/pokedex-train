@@ -22,12 +22,8 @@ export const SinglePokemonPage = ({ match }) => {
     getDataSingle(pokemonRef.url);}
 }, [pokemonRef]);
 
-const renderedPokemon = () => (
-  <SinglePokemonCard pokemon={pokemon} ></SinglePokemonCard>
-)  
-
-
   if (!pokemon) {
+    console.log(pokemon)
     return (
       <section>
         <h2>pokemon not found!</h2>
