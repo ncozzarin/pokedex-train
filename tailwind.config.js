@@ -7,6 +7,9 @@ module.exports = {
         poppins: "'Poppins', sans-serif",
       }
     },
+    scale: {
+      '200': '2'
+    }
   },
   variants: {
     extend: {},
