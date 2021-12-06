@@ -8,7 +8,7 @@ module.exports = {
       }
     },
     scale: {
-      '200': '2'
+      '200': '3'
     }
   },
   variants: {
