@@ -27,13 +27,17 @@ const SinglePokemonCard = ({pokemon}) => {
                 <img className="mx-auto transform scale-200	" src={pokemon.sprites.front_default}></img>
             </div>
         </div>
-        <div className={`h-2/3 bg-white rounded-xl block -my-2 `}>
-            <div className="block -my-8">
+        <div className={`h-2/3 bg-white rounded-xl block -my-2 justify-center align-center container`}>
+            <div className="block  -my-8 w-auto">
+                <br></br>
+                <br></br>
+                <div className="flex w-auto justify-center align-center">
                 <PokemonTypes types={pokemon.types}></PokemonTypes>
-                <div>
-                    weight
                 </div>
-                <div>
+                <div className="flex w-auto justify-center align-center">
+                    <p>{pokemon.weight}Kg</p>
+                </div>
+                <div className="flex w-auto justify-center align-center">
                     <p>{pokemon.description}</p>
                 </div>
             </div>
