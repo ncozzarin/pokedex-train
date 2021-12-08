@@ -32,10 +32,10 @@ const SinglePokemonCard = ({pokemon}) => {
                 <br></br>
                 <br></br>
                 <div className="flex w-auto justify-center align-center">
-                <PokemonTypes types={pokemon.types}></PokemonTypes>
+                <PokemonTypes types={pokemon.types} color={pokemon.color}></PokemonTypes>
                 </div>
                 <div className="flex w-auto justify-center align-center">
-                    <p>{pokemon.weight}Kg</p>
+                    <h3 className={`text-${pokemon.color}-500 text-l font-bold`}>About</h3>
                 </div>
                 <div className="flex w-auto justify-center align-center">
                     <p>{pokemon.description}</p>
