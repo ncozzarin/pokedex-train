@@ -28,17 +28,15 @@ export const SinglePokemonPage = ({ match }) => {
 }, [pokemonRef]);
 
   if (!pokemon) {
-    console.log(pokemon)
     return (
       <section>
         <h2>pokemon not found!</h2>
       </section>
-    )
+    );
   }
 
   return (
     <SinglePokemonCard pokemon={pokemon}></SinglePokemonCard>
-    
-  )
+  );
 
 }

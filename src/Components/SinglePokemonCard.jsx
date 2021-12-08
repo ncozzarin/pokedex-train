@@ -11,9 +11,9 @@ const SinglePokemonCard = ({pokemon}) => {
         return(
         <section>
             <h2>pokemon not found!</h2>
-        </section>)
+        </section>);
     }
-    console.log(pokemon)
+
     return (
     <div className="h-screen border-8 border-white rounded-xl">
     <div className={`justify-center align-center container bg-origin-border h-full border-4 border-opacity-100 box-border border-2 rounded-xl border-${pokemon.color}-400`}>
