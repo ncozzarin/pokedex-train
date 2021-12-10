@@ -7,6 +7,7 @@ import scaleIcon from '../Images/weight.svg';
 import rulerIcon from '../Images/rulerIcon.svg';
 import BackgroundPokeball from '../Images/BackgroundPokeball.svg';
 import PokemonTypes from './PokemonTypes';
+import ProgressBar from './ProgressBar'; 
 
 const SinglePokemonCard = ({pokemon}) => {
     if(Object.keys(pokemon).length === 0){
@@ -66,8 +67,15 @@ const SinglePokemonCard = ({pokemon}) => {
                     
 
                 </div>
+                <div className="flex items-center text-m mx-2">
+                    <p className="text-justify w-full">{pokemon.description}</p>
+                </div>
+
                 <div className="flex w-auto justify-center align-center">
-                    <p>{pokemon.description}</p>
+                    <h3 className={`text-${pokemon.color}-500 text-l font-bold`}>Base Stats</h3>
+                </div>
+                <div>
+                <ProgressBar stat={pokemon.stats[0].base_stat} color={pokemon.color}></ProgressBar>
                 </div>
             </div>
         </div>
