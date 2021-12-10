@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/output.css";
 import PokemonFront from './PokemonFront';
-import backArrow from '../Images/Vector.svg'
-import BackgroundPokeball from '../Images/BackgroundPokeball.svg'
+import backArrow from '../Images/Vector.svg';
+import scaleIcon from '../Images/weight.svg';
+import rulerIcon from '../Images/rulerIcon.svg';
+import BackgroundPokeball from '../Images/BackgroundPokeball.svg';
 import PokemonTypes from './PokemonTypes';
 
 const SinglePokemonCard = ({pokemon}) => {
@@ -13,7 +15,7 @@ const SinglePokemonCard = ({pokemon}) => {
             <h2>pokemon not found!</h2>
         </section>);
     }
-
+    console.log(pokemon)
     return (
     <div className="h-screen border-8 border-white rounded-xl">
     <div className={`justify-center align-center container bg-origin-border h-full border-4 border-opacity-100 box-border border-2 rounded-xl border-${pokemon.color}-400`}>
@@ -36,6 +38,33 @@ const SinglePokemonCard = ({pokemon}) => {
                 </div>
                 <div className="flex w-auto justify-center align-center">
                     <h3 className={`text-${pokemon.color}-500 text-l font-bold`}>About</h3>
+                </div>
+                <div className="flex justify-between justify-center align-center container mx-4">
+                    <div className="container block justify-center align-center">
+                        <div className="flex">
+                            <img src={scaleIcon}></img>
+                            <p>{pokemon.weight} kg</p>
+                        </div>
+                        <p className="text-gray-600 text-sm">Weight</p>
+                    </div>
+
+                    <div className="container block justify-center align-center">
+                        <div className="flex">
+                            <img src={rulerIcon}></img>
+                            <p>{pokemon.height} m</p>
+                        </div>
+                        <p className="text-gray-600 text-sm">Weight</p>
+                    </div>
+
+                    <div className="container block justify-center align-center">
+                        <div className="flex">
+                            <img src={scaleIcon}></img>
+                            <p>{pokemon.weight} kg</p>
+                        </div>
+                        <p className="text-gray-600 text-sm">Weight</p>
+                    </div>
+                    
+
                 </div>
                 <div className="flex w-auto justify-center align-center">
                     <p>{pokemon.description}</p>
