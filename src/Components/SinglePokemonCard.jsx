@@ -24,7 +24,7 @@ const SinglePokemonCard = ({pokemon}) => {
                 <h3>{`#0${pokemon.id}`}</h3>
             </div>
             <div className="hero container mx-auto my-6">
-                <img className="mx-auto transform scale-200	" src={pokemon.sprites.front_default}></img>
+                <img className="mx-auto transform scale-150	" src={pokemon.sprites.front_default}></img>
             </div>
         </div>
         <div className={`h-2/3 bg-white rounded-xl block -my-2 justify-center align-center container`}>

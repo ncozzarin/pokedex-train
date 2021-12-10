@@ -11,8 +11,8 @@ export const SinglePokemonPage = ({ match }) => {
 
   //REFACTOR call function from stringFunctions.js
   function capitalize(str) {
-    const lower = str.toString().toLowerCase();
-    return str.charAt(0).toString().toUpperCase() + lower.slice(1);
+    const lower = str.toLowerCase();
+    return str.charAt(0).toUpperCase() + lower.slice(1);
   }
 
   const getDataSingle = async (url) => {
