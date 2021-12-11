@@ -76,17 +76,17 @@ const SinglePokemonCard = ({pokemon}) => {
                 </div>
                 <div className="flex container align-center items-center">
                     <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>HP</h3>
-                    <p className="ml-6 mr-2">{pokemon.stats[0].base_stat}</p>
+                    <p className="ml-10 mr-2">{pokemon.stats[0].base_stat}</p>
                     <ProgressBar stat={pokemon.stats[0].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
                 </div>
                 <div className="flex container align-center items-center">
                     <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>ATK</h3>
-                    <p className="ml-6 mr-2">{pokemon.stats[1].base_stat}</p>
+                    <p className="ml-8 mr-2">{pokemon.stats[1].base_stat}</p>
                     <ProgressBar stat={pokemon.stats[1].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
                 </div>
                 <div className="flex container align-center items-center">
                     <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>DEF</h3>
-                    <p className="ml-6 mr-2">{pokemon.stats[2].base_stat}</p>
+                    <p className="ml-8 mr-2">{pokemon.stats[2].base_stat}</p>
                     <ProgressBar stat={pokemon.stats[2].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
                 </div>
                 <div className="flex container align-center items-center">
@@ -101,7 +101,7 @@ const SinglePokemonCard = ({pokemon}) => {
                 </div>
                 <div className="flex container align-center items-center">
                     <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>SPD</h3>
-                    <p className="ml-6 mr-2">{pokemon.stats[5].base_stat}</p>
+                    <p className="ml-8 mr-2">{pokemon.stats[5].base_stat}</p>
                     <ProgressBar stat={pokemon.stats[5].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
                 </div>              
             </div>
