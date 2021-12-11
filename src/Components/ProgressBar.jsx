@@ -9,11 +9,11 @@ const ProgressBar =  ({stat, color}) => {
         width: stat
       };
     return (
-    <div className="relative pt-1">
+    <div className="relative pt-1 w-2/3">
         <div className={`overflow-hidden h-2 text-xs flex rounded bg-${color}-200`}>
         <div style={mystyle}
         className={`
-            w-[28%] shadow-none flex flex-col 
+            shadow-none flex flex-col 
             text-center 
             whitespace-nowrap 
             text-white 

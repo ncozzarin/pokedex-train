@@ -7,6 +7,7 @@ import scaleIcon from '../Images/weight.svg';
 import rulerIcon from '../Images/rulerIcon.svg';
 import BackgroundPokeball from '../Images/BackgroundPokeball.svg';
 import PokemonTypes from './PokemonTypes';
+import PokemonMoves from './PokemonMoves';
 import ProgressBar from './ProgressBar'; 
 
 const SinglePokemonCard = ({pokemon}) => {
@@ -44,7 +45,7 @@ const SinglePokemonCard = ({pokemon}) => {
                     <div className="container block justify-center align-center">
                         <div className="flex">
                             <img src={scaleIcon}></img>
-                            <p>{pokemon.weight} kg</p>
+                            <p className="ml-1">{pokemon.weight} kg</p>
                         </div>
                         <p className="text-gray-600 text-sm">Weight</p>
                     </div>
@@ -52,17 +53,16 @@ const SinglePokemonCard = ({pokemon}) => {
                     <div className="container block justify-center align-center">
                         <div className="flex">
                             <img src={rulerIcon}></img>
-                            <p>{pokemon.height} m</p>
+                            <p className="ml-1">{pokemon.height} m</p>
                         </div>
-                        <p className="text-gray-600 text-sm">Weight</p>
+                        <p className="text-gray-600 text-sm">Height</p>
                     </div>
 
                     <div className="container block justify-center align-center">
-                        <div className="flex">
-                            <img src={scaleIcon}></img>
-                            <p>{pokemon.weight} kg</p>
+                        <div className="block">
+                            <PokemonMoves moves={pokemon.moves}></PokemonMoves>
                         </div>
-                        <p className="text-gray-600 text-sm">Weight</p>
+                        <p className="text-gray-600 text-sm">Moves</p>
                     </div>
                     
 
@@ -74,10 +74,36 @@ const SinglePokemonCard = ({pokemon}) => {
                 <div className="flex w-auto justify-center align-center">
                     <h3 className={`text-${pokemon.color}-500 text-l font-bold`}>Base Stats</h3>
                 </div>
-                <div className="inline">
-                <h3 className={`text-${pokemon.color}-500 text-l font-bold`}>HP</h3>
-                <ProgressBar stat={pokemon.stats[0].base_stat} color={pokemon.color} clas></ProgressBar>
+                <div className="flex container align-center items-center">
+                    <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>HP</h3>
+                    <p className="ml-6 mr-2">{pokemon.stats[0].base_stat}</p>
+                    <ProgressBar stat={pokemon.stats[0].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
                 </div>
+                <div className="flex container align-center items-center">
+                    <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>ATK</h3>
+                    <p className="ml-6 mr-2">{pokemon.stats[1].base_stat}</p>
+                    <ProgressBar stat={pokemon.stats[1].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
+                </div>
+                <div className="flex container align-center items-center">
+                    <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>DEF</h3>
+                    <p className="ml-6 mr-2">{pokemon.stats[2].base_stat}</p>
+                    <ProgressBar stat={pokemon.stats[2].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
+                </div>
+                <div className="flex container align-center items-center">
+                    <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>SATK</h3>
+                    <p className="ml-6 mr-2">{pokemon.stats[3].base_stat}</p>
+                    <ProgressBar stat={pokemon.stats[3].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
+                </div>
+                <div className="flex container align-center items-center">
+                    <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>SDEF</h3>
+                    <p className="ml-6 mr-2">{pokemon.stats[4].base_stat}</p>
+                    <ProgressBar stat={pokemon.stats[4].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
+                </div>
+                <div className="flex container align-center items-center">
+                    <h3 className={`text-${pokemon.color}-500 text-l font-bold ml-2`}>SPD</h3>
+                    <p className="ml-6 mr-2">{pokemon.stats[5].base_stat}</p>
+                    <ProgressBar stat={pokemon.stats[5].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
+                </div>              
             </div>
         </div>
     </div>
