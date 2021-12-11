@@ -71,7 +71,7 @@ const SinglePokemonCard = ({pokemon}) => {
                     <p className="text-justify w-full">{pokemon.description}</p>
                 </div>
 
-                <div className="flex w-auto justify-center align-center">
+                <div className="flex w-auto justify-center align-center my-4">
                     <h3 className={`text-${pokemon.color}-500 text-l font-bold`}>Base Stats</h3>
                 </div>
                 <div className="flex container align-center items-center">
