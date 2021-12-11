@@ -47,7 +47,7 @@ const SinglePokemonCard = ({pokemon}) => {
                             <img src={scaleIcon}></img>
                             <p className="ml-1">{pokemon.weight} kg</p>
                         </div>
-                        <p className="text-gray-600 text-sm">Weight</p>
+                        <p className="text-gray-600 text-sm my-4">Weight</p>
                     </div>
 
                     <div className="container block justify-center align-center">
@@ -55,7 +55,7 @@ const SinglePokemonCard = ({pokemon}) => {
                             <img src={rulerIcon}></img>
                             <p className="ml-1">{pokemon.height} m</p>
                         </div>
-                        <p className="text-gray-600 text-sm">Height</p>
+                        <p className="text-gray-600 text-sm my-4">Height</p>
                     </div>
 
                     <div className="container block justify-center align-center">
