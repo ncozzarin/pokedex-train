@@ -1,11 +1,9 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import "../styles/output.css";
-import PokemonFront from './PokemonFront';
 import backArrow from '../Images/Vector.svg';
 import scaleIcon from '../Images/weight.svg';
 import rulerIcon from '../Images/rulerIcon.svg';
-import BackgroundPokeball from '../Images/BackgroundPokeball.svg';
 import PokemonTypes from './PokemonTypes';
 import PokemonMoves from './PokemonMoves';
 import ProgressBar from './ProgressBar'; 
@@ -17,7 +15,6 @@ const SinglePokemonCard = ({pokemon}) => {
             <h2>pokemon not found!</h2>
         </section>);
     }
-    console.log(pokemon)
     return (
     <div className="h-screen border-8 border-white rounded-xl">
     <div className={`justify-center align-center container bg-origin-border h-full border-4 border-opacity-100 box-border border-2 rounded-xl border-${pokemon.color}-400`}>
