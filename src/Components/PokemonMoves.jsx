@@ -9,9 +9,9 @@ const PokemonMoves = ({moves}) => {
     const lower = str.toLowerCase();
     return str.toString().charAt(0).toUpperCase() + lower.slice(1);
     } 
-    moves.slice(2)
-  return( 
-  moves && moves.map(move => {
+    const slicedMovesArray = moves.slice(0, 2);
+    return( 
+    slicedMovesArray && slicedMovesArray.map(move => {
     
     move.move.name = capitalize(move.move.name);
     return(<h3 className={` rounded-xl text-black text-sm`}>{move.move.name}</h3>);
