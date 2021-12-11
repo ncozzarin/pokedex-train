@@ -5,11 +5,13 @@ import "../styles/output.css";
 
 
 const ProgressBar =  ({stat, color}) => {
-
+    const mystyle = {
+        width: stat
+      };
     return (
     <div className="relative pt-1">
         <div className={`overflow-hidden h-2 text-xs flex rounded bg-${color}-200`}>
-        <div
+        <div style={mystyle}
         className={`
             w-[28%] shadow-none flex flex-col 
             text-center 

@@ -74,8 +74,9 @@ const SinglePokemonCard = ({pokemon}) => {
                 <div className="flex w-auto justify-center align-center">
                     <h3 className={`text-${pokemon.color}-500 text-l font-bold`}>Base Stats</h3>
                 </div>
-                <div>
-                <ProgressBar stat={pokemon.stats[0].base_stat} color={pokemon.color}></ProgressBar>
+                <div className="inline">
+                <h3 className={`text-${pokemon.color}-500 text-l font-bold`}>HP</h3>
+                <ProgressBar stat={pokemon.stats[0].base_stat} color={pokemon.color} clas></ProgressBar>
                 </div>
             </div>
         </div>
