@@ -38,7 +38,7 @@ const SinglePokemonCard = ({pokemon}) => {
                 <div className="flex w-auto justify-center align-center">
                     <h3 className={`text-${pokemon.color}-500 text-l font-bold`}>About</h3>
                 </div>
-                <div className="flex justify-between justify-center align-center container mx-4">
+                <div className="flex justify-between justify-center align-center container mx-4 divide-x divide-gray-400">
                     <div className="container block justify-center align-center">
                         <div className="flex">
                             <img src={scaleIcon}></img>
@@ -47,7 +47,7 @@ const SinglePokemonCard = ({pokemon}) => {
                         <p className="text-gray-600 text-sm my-4">Weight</p>
                     </div>
 
-                    <div className="container block justify-center align-center">
+                    <div className="container block justify-center align-center px-2 -mx-2">
                         <div className="flex">
                             <img src={rulerIcon}></img>
                             <p className="ml-1">{pokemon.height} m</p>
@@ -55,7 +55,7 @@ const SinglePokemonCard = ({pokemon}) => {
                         <p className="text-gray-600 text-sm my-4">Height</p>
                     </div>
 
-                    <div className="container block justify-center align-center">
+                    <div className="container block justify-center align-center px-4">
                         <div className="block">
                             <PokemonMoves moves={pokemon.moves}></PokemonMoves>
                         </div>

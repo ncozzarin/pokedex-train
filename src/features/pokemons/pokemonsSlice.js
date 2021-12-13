@@ -51,7 +51,7 @@ const pokemonsSlice = createSlice({
             state.pokemons.push(action.payload);
         },
         filterPokemons: (state, action) => {
-            state.pokemons = state.pokemons && state.pokemons.filter(belongsToTheList(action.payload));
+            state.pokemons = state.pokemons.filter(belongsToTheList(action.payload));
         },
     },
     extraReducers: (builder) => {
@@ -71,4 +71,18 @@ const pokemonsSlice = createSlice({
     },
 });
 
+export const {filterPokemons } = pokemonsSlice.actions;
 export default pokemonsSlice.reducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
