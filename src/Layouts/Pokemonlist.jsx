@@ -19,13 +19,13 @@ export const Pokemonlist = () => {
                     (all) => {
                         if(filterRef == ""){
                             return all;
-                        } else if(all.name.includes(filterRef)) {
-                            return all.pokemons.results.name.includes(filterRef);
+                        } else {
+                            return all.pokemons.results.filter(pokemon => pokemon.name.includes(filterRef));
                         }
                     }
                 )
             }
-            state.pokemons})
+        })
     
     const getData = async (url, i) => {
         let response = await getPokemonsData(url);

@@ -18,7 +18,7 @@ const ProgressBar =  ({stat, color}) => {
             whitespace-nowrap 
             text-white 
             justify-center 
-            bg-${color}-500`}
+            bg-${color}-400`}
         ></div>
     </div>
     </div>

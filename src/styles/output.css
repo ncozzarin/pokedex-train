@@ -29495,6 +29495,10 @@ video {
   background-color: rgba(181, 126, 63, 1);
 }
 
+.bg-brown-200 {
+  background-color: rgba(239, 197, 160, 1);
+}
+
 .border-brown-400 {
   border-color: rgba(181, 126, 63,1);
 }
