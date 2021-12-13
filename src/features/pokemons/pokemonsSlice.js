@@ -6,6 +6,7 @@ const initialState = {
     pokemons: [],
     status: 'idle',
     error: null,
+    filter: null,
 };
 
 export const fetchPokemons = createAsyncThunk(
@@ -38,9 +39,6 @@ export const fetchPokemonsColor = async (pokemonSpeciesUrl) => {
 export const selectAllPokemons = (state) => state.pokemons;
 
 export const selectPokemonById = (state, name) =>{
-    console.log("Select pokemon")
-    console.log(name);
-    console.log(state.pokemons.pokemons.results);
     return state && state.pokemons.pokemons.results && state.pokemons.pokemons.results.find(pokemon => pokemon.name == name);
 }
 const pokemonsSlice = createSlice({
@@ -50,9 +48,9 @@ const pokemonsSlice = createSlice({
         addPokemons: (state, action) => {
             state.pokemons.push(action.payload);
         },
-        filterPokemons: (state, action) => {
-            state.pokemons = state.pokemons.filter(belongsToTheList(action.payload));
-        },
+        projectFilter: (state, action) => {
+            state.filter = action.payload;
+          },
     },
     extraReducers: (builder) => {
         builder
@@ -62,7 +60,9 @@ const pokemonsSlice = createSlice({
             .addCase(fetchPokemons.fulfilled, (state, action) => {
                 state.status = 'succeeded';
                 // Add any fetched pokemons to the array
+                console.log(state.pokemons)
                 state.pokemons = action.payload;
+                console.log(state.pokemons)
             })
             .addCase(fetchPokemons.rejected, (state, action) => {
                 state.status = 'failed';
@@ -71,7 +71,7 @@ const pokemonsSlice = createSlice({
     },
 });
 
-export const {filterPokemons } = pokemonsSlice.actions;
+export const { projectFilter } = pokemonsSlice.actions;
 export default pokemonsSlice.reducer;
 
 

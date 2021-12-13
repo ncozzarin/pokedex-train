@@ -6,7 +6,26 @@ import { useSelector } from 'react-redux';
 export const Pokemonlist = () => {
     const [pokemons, setPokemons] = useState([]);
     let pokemonsArray = [];
-    const pokemonsJSON = useSelector(state => state.pokemons);
+    const pokemonsJSON = useSelector(
+        (state) =>{ 
+            const all = state.pokemons;
+            const filterRef = state.pokemons.filter;
+            console.log(all)
+            if(filterRef === null){
+                return all;
+            }
+            else{
+                return all.pokemons.results.filter(
+                    (all) => {
+                        if(filterRef == ""){
+                            return all;
+                        } else if(all.name.includes(filterRef)) {
+                            return all.pokemons.results.name.includes(filterRef);
+                        }
+                    }
+                )
+            }
+            state.pokemons})
     
     const getData = async (url, i) => {
         let response = await getPokemonsData(url);
