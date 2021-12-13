@@ -1,5 +1,6 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import belongsToTheList from '../../utils/stringFuntions';
 
 const initialState = {
     pokemons: [],
@@ -48,6 +49,9 @@ const pokemonsSlice = createSlice({
     reducers: {
         addPokemons: (state, action) => {
             state.pokemons.push(action.payload);
+        },
+        filterPokemons: (state, action) => {
+            state.pokemons = state.pokemons && state.pokemons.filter(belongsToTheList(action.payload));
         },
     },
     extraReducers: (builder) => {
