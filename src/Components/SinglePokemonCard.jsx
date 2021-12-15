@@ -29,7 +29,7 @@ const SinglePokemonCard = ({pokemon}) => {
             </div>
         </div>
         <div className={`h-2/3 bg-white rounded-xl block -my-2 justify-center align-center container`}>
-            <div className="block  -my-8 w-auto">
+            <div className="block h-5/6 -my-8 w-auto">
                 <br></br>
                 <br></br>
                 <div className="flex w-auto justify-center align-center">
@@ -68,9 +68,10 @@ const SinglePokemonCard = ({pokemon}) => {
                     <p className="text-justify w-full">{pokemon.description}</p>
                 </div>
 
-                <div className="flex w-auto justify-center align-center my-4">
+                <div className="flex w-auto justify-center align-center my-2">
                     <h3 className={`text-${pokemon.color}-400 text-l font-bold`}>Base Stats</h3>
                 </div>
+            <div className="h-5/6">
                 <div className="flex container align-center items-center">
                     <h3 className={`text-${pokemon.color}-400 text-l font-bold ml-2`}>HP</h3>
                     <p className="ml-10 mr-2">{pokemon.stats[0].base_stat}</p>
@@ -100,7 +101,8 @@ const SinglePokemonCard = ({pokemon}) => {
                     <h3 className={`text-${pokemon.color}-400 text-l font-bold ml-2`}>SPD</h3>
                     <p className="ml-8 mr-2">{pokemon.stats[5].base_stat}</p>
                     <ProgressBar stat={pokemon.stats[5].base_stat} color={pokemon.color} className="w-4/5"></ProgressBar>
-                </div>              
+                </div>
+            </div>                
             </div>
         </div>
     </div>

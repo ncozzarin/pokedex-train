@@ -15,7 +15,7 @@ const Search = () => {
                 <img className="transform scale-150" src={searchIcon}></img>
                 <input type="search" 
                 onChange={(event)=>{
-                    dispatch(projectFilter(event.target.value))}}
+                    console.log(event.target.value)}}
                 placeholder="Search" className="block mr-8 rounded-md border-0 focus:outline-none focus:ring-0 focus:border-red-500 flex-grow p-0"/>
             </div>
         </form>
