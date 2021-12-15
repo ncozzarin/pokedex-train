@@ -2,23 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { getPokemonsData, getPokemonColor } from '../utils/fetchService';
 import PokemonListItem from '../Components/PokemonListItem';
 import { useSelector } from 'react-redux';
+import "../styles/output.css";
+
 //Redux logic to consume pokemons frm store with useSelector
 export const Pokemonlist = () => {
     const [pokemons, setPokemons] = useState([]);
     let pokemonsArray = [];
-    const pokemonsJSON = useSelector(
-        (state) =>{ 
-            const all = state.pokemons;
-            const filterRef = state.pokemons.filter;
-            console.log(all)
-            if(filterRef === null){
-                return all;
-            }
-            else{
-                dispatch(fetchPokemons(20));
-            }
-        })
-    
+    const pokemonsJSON = useSelector(state => state.pokemons);    
     const getData = async (url, i) => {
         let response = await getPokemonsData(url);
         const color = await getPokemonColor(response.species.url);
@@ -43,7 +33,7 @@ export const Pokemonlist = () => {
     ))
     
     return (
-        <div className="grid grid-cols-3 m-3">
+        <div className="grid grid-cols-3 lg:grid-cols-6 m-3">
         {renderedPokemons}
         </div>
     )
