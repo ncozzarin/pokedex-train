@@ -15,19 +15,7 @@ export const Pokemonlist = () => {
                 return all;
             }
             else{
-                /*
-                return all.pokemons.results.filter(
-                    (all) => {
-                        if(filterRef == ""){
-                            return all;
-                        } else {
-                            console.log({all})
-                            //return all.pokemons.results.filter(pokemon => pokemon.name.includes(filterRef));
-                        }
-                    }
-                )
-                */
-               console.log({all})
+                dispatch(fetchPokemons(20));
             }
         })
     
