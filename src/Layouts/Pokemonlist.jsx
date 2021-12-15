@@ -8,7 +8,8 @@ import "../styles/output.css";
 export const Pokemonlist = () => {
     const [pokemons, setPokemons] = useState([]);
     let pokemonsArray = [];
-    const pokemonsJSON = useSelector(state => state.pokemons);    
+    const pokemonsJSON = useSelector(state => state.pokemons);
+        
     const getData = async (url, i) => {
         let response = await getPokemonsData(url);
         const color = await getPokemonColor(response.species.url);
