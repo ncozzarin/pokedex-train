@@ -16,6 +16,7 @@ function App(props) {
       //Aca esta el dispatch de todos los pokemons para tenerlos disponibles en el montaje de la app
       dispatch(fetchPokemons(20));
   }, []);
+  
   return (
     <Router>
       <Route exact path="/" component={HomeScreen}/>
